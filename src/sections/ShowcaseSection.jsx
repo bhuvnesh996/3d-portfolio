@@ -1,3 +1,4 @@
+
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,9 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AppShowcase = () => {
   const sectionRef = useRef(null);
-  const rydeRef = useRef(null);
-  const libraryRef = useRef(null);
-  const ycDirectoryRef = useRef(null);
+  const reviddRef = useRef(null);
+  const creatorChartRef = useRef(null);
+  const bespocutRef = useRef(null);
+  const yourbookRef = useRef(null);
 
   useGSAP(() => {
     // Animation for the main section
@@ -20,7 +22,12 @@ const AppShowcase = () => {
     );
 
     // Animations for each app showcase
-    const cards = [rydeRef.current, libraryRef.current, ycDirectoryRef.current];
+    const cards = [
+      reviddRef.current,
+      creatorChartRef.current,
+      bespocutRef.current,
+      yourbookRef.current
+    ];
 
     cards.forEach((card, index) => {
       gsap.fromTo(
@@ -47,39 +54,42 @@ const AppShowcase = () => {
     <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
         <div className="showcaselayout">
-          <div ref={rydeRef} className="first-project-wrapper">
+          <div ref={reviddRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde App Interface" />
+              <img src="/images/Revidd.png" alt="Revidd Streaming Platform" />
             </div>
             <div className="text-content">
               <h2>
-                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                called Ryde
+                Revidd - Launch Your Own Video Streaming Platform in Minutes
               </h2>
               <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
-                user-friendly experience.
+                AI-powered no-code OTT platform enabling businesses to create custom streaming services with live streaming & monetization features.
               </p>
             </div>
           </div>
 
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={libraryRef}>
-              <div className="image-wrapper bg-[#FFEFDB]">
-                <img
-                  src="/images/project2.png"
-                  alt="Library Management Platform"
-                />
+            <div className="project" ref={creatorChartRef}>
+              <div className="image-wrapper bg-[#F0F8E8]">
+                <img src="/images/CC.png" alt="Creator Chart Platform" />
               </div>
-              <h2>The Library Management Platform</h2>
+              <h2>Creator Chart - Professional Content Creation</h2>
+              <p className="text-white-50">
+                3-month creator coaching program helping CXOs and professionals build social media presence and thought leadership.
+              </p>
             </div>
 
-            <div className="project" ref={ycDirectoryRef}>
-              <div className="image-wrapper bg-[#FFE7EB]">
-                <img src="/images/project3.png" alt="YC Directory App" />
+            <div className="project" ref={bespocutRef}>
+              <div className="image-wrapper bg-[#FFF0E6]">
+                <img src="/images/Bespo.png" alt="BESPOCUT Virtual Studio" />
               </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
+              <h2>BESPOCUT - Virtual Studio for Bespoke Clothing</h2>
+              <p className="text-white-50">
+                Cloud-based platform revolutionizing bespoke clothing design with zero inventory model and global fabric access.
+              </p>
             </div>
+
+           
           </div>
         </div>
       </div>
